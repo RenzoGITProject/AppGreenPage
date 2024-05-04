@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".linearLayout_03"
+    android:orientation="vertical">
+    <!--Se cambia la orientacion del layout-->
+
+    <!--Fila 1 La orientacion-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#4CAF50"
+            android:text="F1-1"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#8BC34A"
+            android:text="F1-2"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#CDDC39"
+            android:text="F1-3"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!--Fila 2 es Relative-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"   >
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="100dp"
+            android:background="#03A9F4"
+            android:text="F2-1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="0dp"/>
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="100dp"
+            android:background="#00BCD4"
+            android:text=" F2-2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="220dp"/>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:background="#CDDC39"
+            android:text="F2-3"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+    <!--Fila 3 La orientacion-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:background="#BA7D78"
+            android:text="F3-1"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#E4ABBE"
+            android:text="F3-2"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
