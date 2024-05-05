@@ -9,11 +9,10 @@ import com.alonsoms.appt1alonsoms.entities.clasemodelos
 import com.alonsoms.appt1alonsoms.util.SQLiteHelper
 
 
-class PersonaDAO(context: Context)  {
+class PersonaDAO(context: Context) {
     private var sqLiteHelper: SQLiteHelper = SQLiteHelper(context)
 
-
-    fun registrarLibro(libro: clasemodelos.Libro):String{
+    fun registrarLibro(libro: clasemodelos.Libro): String {
         var respuesta = "";
         val db = sqLiteHelper.writableDatabase
         try {
@@ -23,49 +22,74 @@ class PersonaDAO(context: Context)  {
             valores.put("sinopsis", libro.sinopsis)
             valores.put("preciobase", libro.preciobase)
 
-            val rpta = db.insert("libros",null,valores)
-            if(rpta == -1L){
+            val rpta = db.insert("libros", null, valores)
+            if (rpta == -1L) {
                 respuesta = "Error al insertar libro"
-            }else{
+            } else {
                 respuesta = "Se registró correctamente"
             }
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Log.d("===", e.message.toString())
             respuesta = "Ocurrio un error"
-        }finally {
+        } finally {
             db.close()
         }
-        return  respuesta
+        return respuesta
     }
-    fun cargarOferta(oferta: clasemodelos.Oferta):ArrayList<clasemodelos.Oferta>{
-        val listaOferta:ArrayList<clasemodelos.Oferta> = ArrayList()
+
+    fun cargarOferta(oferta: clasemodelos.Oferta): ArrayList<clasemodelos.Oferta> {
+        val listaOferta: ArrayList<clasemodelos.Oferta> = ArrayList()
         val query = "SELECT * FROM ofertas"
         val db = sqLiteHelper.readableDatabase
-        val cursor:Cursor
+        val cursor: Cursor
 
         try {
-            cursor = db.rawQuery(query,null)
+            cursor = db.rawQuery(query, null)
             cursor.moveToFirst()
             do {
                 //val IdOferta:Int = cursor.getInt(cursor.getColumnIndexOrThrow("IdOferta"))
-                val idSubasta:Int =cursor.getInt(cursor.getColumnIndexOrThrow("idSubasta"))
-                val precioOferta:Float = cursor.getFloat(cursor.getColumnIndexOrThrow("precioOferta"))
+                val idSubasta: Int = cursor.getInt(cursor.getColumnIndexOrThrow("idSubasta"))
+                val precioOferta: Float =
+                    cursor.getFloat(cursor.getColumnIndexOrThrow("precioOferta"))
 
-                val  clasemodelos=clasemodelos.Oferta ()
-             //   persona.IdOferta = IdOferta
+                val clasemodelos = clasemodelos.Oferta()
+                //   persona.IdOferta = IdOferta
                 clasemodelos.idSubasta = idSubasta.toLong()
                 clasemodelos.precioOferta = precioOferta.toFloat()
 
                 listaOferta.add(clasemodelos)
 
 
-            }while (cursor.moveToNext())
-        }catch (e:Exception){
+            } while (cursor.moveToNext())
+        } catch (e: Exception) {
             Log.d("===", e.message.toString())
 
-        }finally {
+        } finally {
             db.close()
         }
         return listaOferta;
     }
+
+    fun registrarOferta(oferta: clasemodelos.Oferta): String {
+        var respuesta = "";
+        val db = sqLiteHelper.writableDatabase
+        try {
+            val valores = ContentValues()
+            valores.put("PrecioOferta", oferta.precioOferta)
+
+            val rpta = db.insert("ofertas", null, valores)
+            if (rpta == -1L) {
+                respuesta = "Error al insertar oferta"
+            } else {
+                respuesta = "Se registró oferta , mucha suerte"
+            }
+        } catch (e: Exception) {
+            Log.d("===", e.message.toString())
+            respuesta = "Ocurrio un error"
+        } finally {
+            db.close()
+        }
+        return respuesta
+    }
+
 }
