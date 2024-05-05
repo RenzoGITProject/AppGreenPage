@@ -4,14 +4,15 @@ import android.content.Context
 import android.database.Cursor
 import android.util.Log
 import com.alonsoms.appt1alonsoms.entities.Persona
+import com.alonsoms.appt1alonsoms.entities.clasemodelos
 import com.alonsoms.appt1alonsoms.util.SQLiteHelper
 
 
 class PersonaDAO(context: Context)  {
     private var sqLiteHelper: SQLiteHelper = SQLiteHelper(context)
 
-    fun cargarOferta():ArrayList<Persona>{
-        val listaPersona:ArrayList<Persona> = ArrayList()
+    fun cargarOferta():ArrayList<clasemodelos.Oferta>{
+        val listaOferta:ArrayList<clasemodelos.Oferta> = ArrayList()
         val query = "SELECT * FROM ofertas"
         val db = sqLiteHelper.readableDatabase
         val cursor:Cursor
@@ -20,16 +21,16 @@ class PersonaDAO(context: Context)  {
             cursor = db.rawQuery(query,null)
             cursor.moveToFirst()
             do {
-                val IdOferta:Int = cursor.getInt(cursor.getColumnIndexOrThrow("IdOferta"))
-                val IdSubasta:Int =cursor.getInt(cursor.getColumnIndexOrThrow("IdSubasta"))
-                val PrecioOferta:Float = cursor.getFloat(cursor.getColumnIndexOrThrow("IdSubasta"))
+                //val IdOferta:Int = cursor.getInt(cursor.getColumnIndexOrThrow("IdOferta"))
+                val idSubasta:Int =cursor.getInt(cursor.getColumnIndexOrThrow("idSubasta"))
+                val precioOferta:Float = cursor.getFloat(cursor.getColumnIndexOrThrow("precioOferta"))
 
-                val persona = Persona()
-                persona.IdOferta = IdOferta
-                persona.IdSubasta = IdSubasta
-                persona.PrecioOferta = PrecioOferta
+                val  clasemodelos=clasemodelos.Oferta ()
+             //   persona.IdOferta = IdOferta
+                clasemodelos.idSubasta = idSubasta.toLong()
+                clasemodelos.precioOferta = precioOferta.toFloat()
 
-                listaPersona.add(persona)
+                listaOferta.add(clasemodelos)
 
 
             }while (cursor.moveToNext())
@@ -39,6 +40,6 @@ class PersonaDAO(context: Context)  {
         }finally {
             db.close()
         }
-        return listaPersona;
+        return listaOferta;
     }
 }

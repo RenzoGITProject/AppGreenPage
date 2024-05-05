@@ -9,13 +9,14 @@ import com.alonsoms.appt1alonsoms.entities.Persona
 import com.alonsoms.appt1alonsoms.entities.clasemodelos
 
 
-private var listarOfertasActivity:ArrayList<Persona> = ArrayList()
 
-fun agregarDatos(item: ArrayList<Persona>){
-
-
-}
 class AdaptadorPersonalizado:RecyclerView.Adapter<AdaptadorPersonalizado.MiViewHolder>() {
+
+    private var listarOfertas:ArrayList<clasemodelos> = ArrayList()
+
+    fun agregarDatos(items: ArrayList<clasemodelos>) {
+        this.listarOfertas = items
+    }
     class MiViewHolder(var view: View):RecyclerView.ViewHolder(view) {
         private var PrecioOferta = view.findViewById<TextView>(R.id.filaPrecioOferta)
 
