@@ -70,7 +70,7 @@
                 tools:layout_editor_absoluteX="207dp" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/lblfecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -89,16 +89,16 @@
                 tools:layout_editor_absoluteX="74dp"
                 tools:layout_editor_absoluteY="63dp" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnOfertar"
+            <Button
+                android:id="@+id/btnofertar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="42dp"
-                android:layout_marginBottom="50dp"
-                android:clickable="true"
+                android:layout_marginEnd="28dp"
+                android:text="Ofertar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/icono3" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.605" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
