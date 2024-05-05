@@ -18,6 +18,7 @@ class PersonaDAO(context: Context)  {
 
         try {
             cursor = db.rawQuery(query,null)
+            cursor.moveToFirst()
             do {
                 val IdOferta:Int = cursor.getInt(cursor.getColumnIndexOrThrow("IdOferta"))
                 val IdSubasta:Int =cursor.getInt(cursor.getColumnIndexOrThrow("IdSubasta"))
