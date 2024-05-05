@@ -88,6 +88,16 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context,DATABASE_NAME,nul
     /* Se ejecuta una sola vez*/
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS persona")
+        db.execSQL("DROP TABLE IF EXISTS usuario")
+        db.execSQL("DROP TABLE IF EXISTS perfilUsuario")
+        db.execSQL("DROP TABLE IF EXISTS editorial")
+        db.execSQL("DROP TABLE IF EXISTS genero")
+        db.execSQL("DROP TABLE IF EXISTS libros")
+        db.execSQL("DROP TABLE IF EXISTS subasta")
+        db.execSQL("DROP TABLE IF EXISTS calificacion")
+        db.execSQL("DROP TABLE IF EXISTS ofertas")
+        db.execSQL("DROP TABLE IF EXISTS resena")
+
         onCreate(db)
     }
 
