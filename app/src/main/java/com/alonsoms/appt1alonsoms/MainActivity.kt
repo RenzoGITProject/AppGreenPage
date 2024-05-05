@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnInterface.setOnClickListener {
-            val intent = Intent(this,linearLayout_04::class.java)
+            val intent = Intent(this,ListarOfertasActivity::class.java)
             startActivity(intent)
         }
 
