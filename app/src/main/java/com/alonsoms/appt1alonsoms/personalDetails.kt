@@ -37,9 +37,9 @@ class personalDetails : AppCompatActivity() {
 
     fun setReferencias(){
         txtDNI = findViewById(R.id.txtMontoSoles)
-        txtNombres = findViewById(R.id.txtNombres)
-        txtCorreo = findViewById(R.id.txtCorreo)
-        btnRegistrar = findViewById(R.id.btnRegistrar)
+        txtNombres = findViewById(R.id.txtEstado)
+        txtCorreo = findViewById(R.id.txtPreciobase)
+        btnRegistrar = findViewById(R.id.btnRegistrarLibro)
         btnRegresar = findViewById(R.id.btnRegresar)
 
         btnRegistrar.setOnClickListener {

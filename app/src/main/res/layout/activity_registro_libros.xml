@@ -2,9 +2,97 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroLibrosActivity">
+    android:layout_margin="30dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/lblTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro de Libros"
+        android:textColor="#E91E63"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Nombre de libro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTitulo" />
+
+    <EditText
+        android:id="@+id/txtLibro"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/caja"
+        android:ems="10"
+        android:hint="Ingrese nombre de libro"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Estado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLibro" />
+
+    <EditText
+        android:id="@+id/txtEstado"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/caja"
+        android:ems="10"
+        android:hint="Ingrese Estado del libro"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Precio base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
+
+    <EditText
+        android:id="@+id/txtPreciobase"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/caja"
+        android:ems="10"
+        android:hint="Ingrese precio Base"
+        android:inputType="numberDecimal"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/btnRegistrarLibro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Registrar Libro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPreciobase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
