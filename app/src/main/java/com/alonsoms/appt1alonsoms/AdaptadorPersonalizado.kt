@@ -6,17 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.alonsoms.appt1alonsoms.entities.Persona
 import com.alonsoms.appt1alonsoms.entities.clasemodelos
 
 
 
 class AdaptadorPersonalizado:RecyclerView.Adapter<AdaptadorPersonalizado.MiViewHolder>() {
 
-    private var listarOfertas:ArrayList<clasemodelos> = ArrayList()
+    private var listarOfertas:ArrayList<clasemodelos.Oferta> = ArrayList()
     private lateinit var context: Context
 
-    fun agregarDatos(items: ArrayList<clasemodelos>) {
+    fun agregarDatos(items: ArrayList<clasemodelos.Oferta>) {
         this.listarOfertas = items
     }
 
@@ -51,7 +50,7 @@ class AdaptadorPersonalizado:RecyclerView.Adapter<AdaptadorPersonalizado.MiViewH
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return listarOfertas.size
     }
 
 }

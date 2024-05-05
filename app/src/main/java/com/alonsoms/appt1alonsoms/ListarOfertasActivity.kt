@@ -4,15 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.alonsoms.appt1alonsoms.model.PersonaDAO
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListarOfertasActivity : AppCompatActivity() {
 
     private lateinit var btnAgregarMonto:FloatingActionButton
+    private  lateinit var rvOfertas:RecyclerView
     private lateinit var personaDAO: PersonaDAO
+    private var adaptador:AdaptadorPersonalizado = AdaptadorPersonalizado()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +29,8 @@ class ListarOfertasActivity : AppCompatActivity() {
     fun mostrarOfertas(){
         val listaOferta = personaDAO.cargarOferta()
 
+        adaptador.agregarDatos(listaOferta)
+
     }
     fun asignarReferencias(){
         btnAgregarMonto =findViewById(R.id.btnAgregarMonto)
@@ -35,5 +39,9 @@ class ListarOfertasActivity : AppCompatActivity() {
             startActivity(intent)
         }
         personaDAO = PersonaDAO(this)
+
+        rvOfertas = findViewById(R.id.rvOfertas)
+        rvOfertas.layoutManager=LinearLayoutManager(this)
+        rvOfertas.adapter = adaptador
     }
 }
