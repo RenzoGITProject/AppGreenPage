@@ -82,7 +82,10 @@ class RegistroLibrosActivity : AppCompatActivity() {
             val ventana = AlertDialog.Builder(this)
             ventana.setTitle("Mensaje Informativo")
             ventana.setMessage(mensaje)
-            ventana.setPositiveButton("Aceptar",null)
+            ventana.setPositiveButton("Aceptar",{dialogInterface:DialogInterface,i:Int->
+                val intent =Intent(this,ListaSubastasActivity::class.java)
+                startActivity(intent)
+            })
 
             ventana.create().show()
         }
