@@ -28,6 +28,7 @@ class PersonaDAO(context: Context)  {
                 persona.IdSubasta = IdSubasta
                 persona.PrecioOferta = PrecioOferta
 
+                listaPersona.add(persona)
 
 
             }while (cursor.moveToNext())
