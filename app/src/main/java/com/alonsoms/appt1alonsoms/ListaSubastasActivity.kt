@@ -19,7 +19,7 @@ class ListaSubastasActivity : AppCompatActivity() {
         asignarReferencias()
     }
     fun asignarReferencias(){
-        btnOfertar = findViewById(R.id.btnOfertar)
+        btnOfertar = findViewById(R.id.btnofertar)
         btnOfertar.setOnClickListener {
             val intent = Intent(this,ListarOfertasActivity::class.java)
             startActivity(intent)
