@@ -52,5 +52,4 @@ class clasemodelos {
         var idUsuario: Long = 0
     }
 
-
 }
