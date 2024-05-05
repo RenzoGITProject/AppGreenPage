@@ -23,6 +23,13 @@ class PersonaDAO(context: Context)  {
                 val IdSubasta:Int =cursor.getInt(cursor.getColumnIndexOrThrow("IdSubasta"))
                 val PrecioOferta:Float = cursor.getFloat(cursor.getColumnIndexOrThrow("IdSubasta"))
 
+                val persona = Persona()
+                persona.IdOferta = IdOferta
+                persona.IdSubasta = IdSubasta
+                persona.PrecioOferta = PrecioOferta
+
+
+
             }while (cursor.moveToNext())
         }catch (e:Exception){
             Log.d("===", e.message.toString())
