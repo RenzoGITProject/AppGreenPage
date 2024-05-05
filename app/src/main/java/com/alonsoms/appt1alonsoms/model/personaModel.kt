@@ -7,10 +7,10 @@ import android.database.Cursor
 import android.util.Log
 
 import com.alonsoms.appt1alonsoms.entities.Persona
-import com.alonsoms.appt1alonsoms.util.SQLiteHelper
+import com.alonsoms.appt1alonsoms.util.InsertTables
 
 class PersonaModel(context: Context) {
-    private val sqLiteHelper: SQLiteHelper = SQLiteHelper(context)
+    private val sqLiteHelper: InsertTables = InsertTables(context)
 
     fun savePersona(persona: Persona): String {
         var respuesta = ""

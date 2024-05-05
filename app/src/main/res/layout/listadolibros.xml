@@ -70,7 +70,7 @@
                 tools:layout_editor_absoluteX="207dp" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/lblfecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -90,7 +90,7 @@
                 tools:layout_editor_absoluteY="63dp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnofertar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="28dp"
