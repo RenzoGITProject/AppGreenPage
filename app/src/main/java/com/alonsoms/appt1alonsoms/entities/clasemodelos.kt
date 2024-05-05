@@ -21,6 +21,7 @@ class clasemodelos {
     }
 
     class Libro {
+        var preciobase: Float = 0F
         lateinit var titulo: String
         var estado: String? = null
         lateinit var isbn: String

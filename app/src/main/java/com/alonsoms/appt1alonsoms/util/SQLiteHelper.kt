@@ -9,7 +9,7 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context,DATABASE_NAME,nul
 
     companion object{
         private const val DATABASE_NAME = "planillas.db"
-        private const val  DATABASE_VERSION= 1
+        private const val  DATABASE_VERSION= 2
    }
 
     /* Se crea la base de datos*/
@@ -37,17 +37,29 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context,DATABASE_NAME,nul
                     "Nombre VARCHAR(255) NOT NULL);"
             db.execSQL(sqlGenero)
 
-            val sqlLibros = "CREATE TABLE IF NOT EXISTS libros " +
+            val sqlLibros1 = "CREATE TABLE IF NOT EXISTS libros1 " +
                     "(IdLibro INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "Titulo VARCHAR(255) NOT NULL, " +
-                    "Estado VARCHAR(255), " +
+                    "titulo VARCHAR(255) NOT NULL, " +
+                    "estado VARCHAR(255), " +
                     "ISBN VARCHAR(255) UNIQUE NOT NULL, " +
                     "IdEditorial INTEGER, " +
                     "IdGenero INTEGER, " +
-                    "Sinopsis VARCHAR(255), " +
+                    "sinopsis VARCHAR(255), " +
+                    "preciobase FLOAT, " +
                     "FOREIGN KEY (IdEditorial) REFERENCES editorial(IdEditorial), " +
                     "FOREIGN KEY (IdGenero) REFERENCES genero(IdGenero));"
-            db.execSQL(sqlLibros)
+            db.execSQL(sqlLibros1)
+
+        val sqlLibros = "CREATE TABLE IF NOT EXISTS libros " +
+                "(IdLibro INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "titulo TEXT NOT NULL, " +
+                "estado TEXT NOT NULL, " +
+                "sinopsis TEXT, " +
+                "preciobase FLOAT );"
+
+
+
+        db.execSQL(sqlLibros)
 
             val sqlSubasta = "CREATE TABLE IF NOT EXISTS subasta " +
                     "(IdSubasta INTEGER PRIMARY KEY AUTOINCREMENT, " +

@@ -27,9 +27,9 @@ class ListarOfertasActivity : AppCompatActivity() {
     }
 
     fun mostrarOfertas(){
-        val listaOferta = personaDAO.cargarOferta()
+     //   val listaOferta = personaDAO.cargarOferta()
 
-        adaptador.agregarDatos(listaOferta)
+      //  adaptador.agregarDatos(listaOferta)
 
     }
     fun asignarReferencias(){

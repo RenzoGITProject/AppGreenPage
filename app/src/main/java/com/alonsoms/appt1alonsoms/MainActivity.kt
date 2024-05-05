@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnPersona.setOnClickListener {
-            val intent = Intent(this,personalDetails::class.java)
+            val intent = Intent(this,RegistroLibrosActivity::class.java)
             startActivity(intent)
         }
 
