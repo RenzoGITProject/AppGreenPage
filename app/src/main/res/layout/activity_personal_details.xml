@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/txtDNI"
+        android:id="@+id/txtMontoSoles"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:ems="10"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:text="Nombres y apellidos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDNI" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMontoSoles" />
 
     <EditText
         android:id="@+id/txtNombres"

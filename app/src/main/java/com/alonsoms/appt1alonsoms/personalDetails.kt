@@ -1,6 +1,5 @@
 package com.alonsoms.appt1alonsoms
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -37,7 +36,7 @@ class personalDetails : AppCompatActivity() {
     }
 
     fun setReferencias(){
-        txtDNI = findViewById(R.id.txtDNI)
+        txtDNI = findViewById(R.id.txtMontoSoles)
         txtNombres = findViewById(R.id.txtNombres)
         txtCorreo = findViewById(R.id.txtCorreo)
         btnRegistrar = findViewById(R.id.btnRegistrar)
