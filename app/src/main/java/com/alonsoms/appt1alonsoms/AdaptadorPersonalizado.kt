@@ -8,15 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.alonsoms.appt1alonsoms.entities.clasemodelos
 
-
-
 class AdaptadorPersonalizado:RecyclerView.Adapter<AdaptadorPersonalizado.MiViewHolder>() {
 
-    private var listarOfertas:ArrayList<clasemodelos.Oferta> = ArrayList()
+    private var listaOfertas:ArrayList<clasemodelos.Oferta> = ArrayList()
     private lateinit var context: Context
-
     fun agregarDatos(items: ArrayList<clasemodelos.Oferta>) {
-        this.listarOfertas = items
+        this.listaOfertas = items
     }
 
     fun contexto(context: Context){
@@ -25,17 +22,13 @@ class AdaptadorPersonalizado:RecyclerView.Adapter<AdaptadorPersonalizado.MiViewH
     class MiViewHolder(var view: View):RecyclerView.ViewHolder(view) {
         private var PrecioOferta = view.findViewById<TextView>(R.id.filaPrecioOferta)
 
-
-        fun bindView(clasemodelos: clasemodelos.Oferta){
-            PrecioOferta.text = clasemodelos.precioOferta.toFloat().toString()
-
+        fun bindView( oferta: clasemodelos.Oferta){
+            PrecioOferta.text = oferta.precioOferta.toString()
         }
-
         fun bindView(clasemodelos: clasemodelos) {
 
         }
     }
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -44,13 +37,12 @@ class AdaptadorPersonalizado:RecyclerView.Adapter<AdaptadorPersonalizado.MiViewH
     )
 
     override fun onBindViewHolder(holder: AdaptadorPersonalizado.MiViewHolder, position: Int) {
-       val ofertaItem = listarOfertas[position]
+       val ofertaItem = listaOfertas[position]
         holder.bindView(ofertaItem)
         
     }
-
     override fun getItemCount(): Int {
-        return listarOfertas.size
+        return listaOfertas.size
     }
 
 }

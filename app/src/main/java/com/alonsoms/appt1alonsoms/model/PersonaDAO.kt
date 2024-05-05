@@ -37,6 +37,29 @@ class PersonaDAO(context: Context) {
         return respuesta
     }
 
+
+    fun registrarOferta(oferta: clasemodelos.Oferta): String {
+        var respuesta = "";
+        val db = sqLiteHelper.writableDatabase
+        try {
+            val valores = ContentValues()
+            valores.put("PrecioOferta", oferta.precioOferta)
+
+            val rpta = db.insert("ofertas", null, valores)
+            if (rpta == -1L) {
+                respuesta = "Error al insertar oferta"
+            } else {
+                respuesta = "Se registró oferta , mucha suerte"
+            }
+        } catch (e: Exception) {
+            Log.d("===", e.message.toString())
+            respuesta = "Ocurrio un error"
+        } finally {
+            db.close()
+        }
+        return respuesta
+    }
+
     fun cargarOferta(): ArrayList<clasemodelos.Oferta> {
         val listaOferta: ArrayList<clasemodelos.Oferta> = ArrayList()
         val query = "SELECT * FROM ofertas"
@@ -67,28 +90,6 @@ class PersonaDAO(context: Context) {
             db.close()
         }
         return listaOferta;
-    }
-
-    fun registrarOferta(oferta: clasemodelos.Oferta): String {
-        var respuesta = "";
-        val db = sqLiteHelper.writableDatabase
-        try {
-            val valores = ContentValues()
-            valores.put("PrecioOferta", oferta.precioOferta)
-
-            val rpta = db.insert("ofertas", null, valores)
-            if (rpta == -1L) {
-                respuesta = "Error al insertar oferta"
-            } else {
-                respuesta = "Se registró oferta , mucha suerte"
-            }
-        } catch (e: Exception) {
-            Log.d("===", e.message.toString())
-            respuesta = "Ocurrio un error"
-        } finally {
-            db.close()
-        }
-        return respuesta
     }
 
 }
