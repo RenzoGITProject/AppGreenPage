@@ -37,7 +37,7 @@ class PersonaDAO(context: Context) {
         return respuesta
     }
 
-    fun cargarOferta(oferta: clasemodelos.Oferta): ArrayList<clasemodelos.Oferta> {
+    fun cargarOferta(): ArrayList<clasemodelos.Oferta> {
         val listaOferta: ArrayList<clasemodelos.Oferta> = ArrayList()
         val query = "SELECT * FROM ofertas"
         val db = sqLiteHelper.readableDatabase
@@ -47,17 +47,16 @@ class PersonaDAO(context: Context) {
             cursor = db.rawQuery(query, null)
             cursor.moveToFirst()
             do {
-                //val IdOferta:Int = cursor.getInt(cursor.getColumnIndexOrThrow("IdOferta"))
+                val IdOferta:Int = cursor.getInt(cursor.getColumnIndexOrThrow("IdOferta"))
                 val idSubasta: Int = cursor.getInt(cursor.getColumnIndexOrThrow("idSubasta"))
-                val precioOferta: Float =
-                    cursor.getFloat(cursor.getColumnIndexOrThrow("precioOferta"))
+                val PrecioOferta: Float =cursor.getFloat(cursor.getColumnIndexOrThrow("PrecioOferta"))
 
-                val clasemodelos = clasemodelos.Oferta()
-                //   persona.IdOferta = IdOferta
-                clasemodelos.idSubasta = idSubasta.toLong()
-                clasemodelos.precioOferta = precioOferta.toFloat()
+                val oferta = clasemodelos.Oferta()
+                oferta.IdOferta = IdOferta
+                oferta.idSubasta = idSubasta.toLong()
+                oferta.precioOferta = PrecioOferta
 
-                listaOferta.add(clasemodelos)
+                listaOferta.add(oferta)
 
 
             } while (cursor.moveToNext())

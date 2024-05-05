@@ -44,6 +44,7 @@ class clasemodelos {
     }
 
     class Oferta {
+        var IdOferta:Int=0
         var idSubasta: Long = 0
         var precioOferta: Float = 0f
     }
