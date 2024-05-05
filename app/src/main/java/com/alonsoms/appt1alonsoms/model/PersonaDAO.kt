@@ -71,12 +71,12 @@ class PersonaDAO(context: Context) {
             cursor.moveToFirst()
             do {
                 val IdOferta:Int = cursor.getInt(cursor.getColumnIndexOrThrow("IdOferta"))
-                val idSubasta: Int = cursor.getInt(cursor.getColumnIndexOrThrow("idSubasta"))
+                val IdSubasta: Int = cursor.getInt(cursor.getColumnIndexOrThrow("IdSubasta"))
                 val PrecioOferta: Float =cursor.getFloat(cursor.getColumnIndexOrThrow("PrecioOferta"))
 
                 val oferta = clasemodelos.Oferta()
                 oferta.IdOferta = IdOferta
-                oferta.idSubasta = idSubasta.toLong()
+                oferta.idSubasta = IdSubasta.toLong()
                 oferta.precioOferta = PrecioOferta
 
                 listaOferta.add(oferta)
