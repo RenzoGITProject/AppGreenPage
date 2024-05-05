@@ -6,11 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.alonsoms.appt1alonsoms.model.PersonaDAO
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListarOfertasActivity : AppCompatActivity() {
 
     private lateinit var btnAgregarMonto:FloatingActionButton
+    private lateinit var personaDAO: PersonaDAO
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +21,12 @@ class ListarOfertasActivity : AppCompatActivity() {
         setContentView(R.layout.activity_listar_ofertas)
 
         asignarReferencias()
+        mostrarOfertas()
+    }
+
+    fun mostrarOfertas(){
+        val listaOferta = personaDAO.cargarOferta()
+
     }
     fun asignarReferencias(){
         btnAgregarMonto =findViewById(R.id.btnAgregarMonto)
@@ -26,5 +34,6 @@ class ListarOfertasActivity : AppCompatActivity() {
             val intent = Intent(this,registrarOfertasActivity::class.java)
             startActivity(intent)
         }
+        personaDAO = PersonaDAO(this)
     }
 }
