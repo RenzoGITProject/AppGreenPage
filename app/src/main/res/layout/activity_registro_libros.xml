@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registro de Libros"
-        android:textColor="#E91E63"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +95,7 @@
         android:layout_marginTop="32dp"
         android:text="Registrar Libro"
         app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/green"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPreciobase" />

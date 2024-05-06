@@ -1,6 +1,6 @@
 package com.alonsoms.appt1alonsoms.model
 
-import com.alonsoms.appt1alonsoms.entities.clasemodelos.Usuario
+import com.alonsoms.appt1alonsoms.entities.clasemodelos.usuario
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -10,17 +10,17 @@ import com.alonsoms.appt1alonsoms.util.SQLiteHelper
 class UsuarioModel(context: Context) {
     private val sqLiteHelper: SQLiteHelper = SQLiteHelper(context)
 
-    fun saveUsuario(usuario: Usuario): String {
+    fun saveUsuario(Usuario: usuario): String {
         var respuesta = ""
         val db = sqLiteHelper.writableDatabase
 
         try {
             val valores = ContentValues()
 
-            valores.put("nombres", usuario.nombres)
-            valores.put("correo", usuario.correo)
-            valores.put("username", usuario.username)
-            valores.put("contrasena", usuario.contrasena)
+            valores.put("nombres", Usuario.nombres)
+            valores.put("correo", Usuario.correo)
+            valores.put("username", Usuario.username)
+            valores.put("contrasena", Usuario.contrasena)
 
             val rpta = db.insert("usuario", null, valores)
 
@@ -39,9 +39,9 @@ class UsuarioModel(context: Context) {
         return respuesta
     }
 
-    fun getUsuarios(): ArrayList<Usuario> {
+    fun getUsuarios(): ArrayList<usuario> {
 
-        val listUsuarios: ArrayList<Usuario> = ArrayList()
+        val listUsuarios: ArrayList<usuario> = ArrayList()
         val query = "SELECT * FROM usuario"
         val db = sqLiteHelper.readableDatabase
 
@@ -57,7 +57,7 @@ class UsuarioModel(context: Context) {
                 val username: String = cursor.getString(cursor.getColumnIndexOrThrow("username"))
                 val contrasena: String = cursor.getString(cursor.getColumnIndexOrThrow("contrasena"))
 
-                val usuario = Usuario()
+                val usuario = usuario()
                 usuario.nombres = nombres
                 usuario.correo = correo
                 usuario.username = username
@@ -77,7 +77,7 @@ class UsuarioModel(context: Context) {
         var existeUsuario = false
         val db = sqLiteHelper.readableDatabase
 
-        val query = "SELECT COUNT(*) FROM usuario WHERE username = ? AND contrasena = ?"
+        val query = "SELECT COUNT(*) FROM Usuario WHERE Login = ? AND Password = ?"
         val selectionArgs = arrayOf(username, contrasena)
 
         val cursor: Cursor = db.rawQuery(query, selectionArgs)

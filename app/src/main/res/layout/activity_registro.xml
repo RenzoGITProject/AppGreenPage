@@ -67,37 +67,23 @@
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <EditText
-                android:id="@+id/txttelefono"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_local_phone_24"
-                android:drawablePadding="8dp"
-                android:ems="10"
-                android:hint="Telefono Movil"
-                android:inputType="phone"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
-
-            <EditText
                 android:id="@+id/txtusuarioregistro"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_person_24"
+
                 android:drawablePadding="8dp"
                 android:ems="10"
                 android:hint="Usuario"
-                android:inputType="text"
+                android:inputType="phone"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <EditText
-                android:id="@+id/txtclaveregistro"
+                android:id="@+id/txtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -106,6 +92,21 @@
                 android:drawablePadding="8dp"
                 android:ems="10"
                 android:hint="Contraseña"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background" />
+
+            <EditText
+                android:id="@+id/txtPasswordConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/baseline_lock_24"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:hint="Confirma Contraseña"
 
                 android:inputType="textPassword"
                 android:padding="8dp"

@@ -10,17 +10,18 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.alonsoms.appt1alonsoms.entities.clasemodelos.Usuario
+import com.alonsoms.appt1alonsoms.entities.clasemodelos.usuario
 import com.alonsoms.appt1alonsoms.model.UsuarioModel
 
 class RegistroUsuarioActivity : AppCompatActivity() {
     private lateinit var btnRegistro: Button
-    private lateinit var btnGuardar:Button
-    private lateinit var txtUsuario: EditText
+    private lateinit var btnregistrar:Button
+    private lateinit var txtnombres: EditText
+    //private lateinit var txtCorreo: EditText
     private lateinit var txtusername: EditText
-    private lateinit var txtCorreo: EditText
     private lateinit var txtPassword: EditText
     private lateinit var txtPasswordConfirm: EditText
+   // private lateinit var txtPasswordConfirm: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,20 +38,26 @@ class RegistroUsuarioActivity : AppCompatActivity() {
 
     fun setReferencias(){
 
-        btnGuardar = findViewById(R.id.btnregistrar)
-        txtPassword = findViewById(R.id.txtclaveregistro)
-        txtUsuario = findViewById(R.id.txtusuarioregistro)
-        txtCorreo = findViewById(R.id.txtemail)
+        btnregistrar = findViewById(R.id.btnregistrar)
+        txtnombres = findViewById(R.id.txtnomapellidos)
+       // txtCorreo = findViewById(R.id.txtemail)
         txtusername = findViewById(R.id.txtusuarioregistro)
-        txtPasswordConfirm = findViewById(R.id.txtclaveregistro)
+        txtPassword = findViewById(R.id.txtPassword)
+       txtPasswordConfirm = findViewById(R.id.txtPasswordConfirm)
 
-        btnGuardar.setOnClickListener {
+
+        btnregistrar.setOnClickListener {
             var usuarioModel = UsuarioModel(this)
-            var user = Usuario();
-            user.correo = txtCorreo.text.toString();
-            user.contrasena = txtPassword.text.toString();
-            user.username = txtUsuario.text.toString();
-            user.nombres = txtusername.text.toString();
+            var user = usuario();
+
+            user.nombres = txtnombres.text.toString()
+           // user.correo = txtCorreo.text.toString()
+            user.username = txtusername.text.toString()
+            user.contrasena = txtPassword.text.toString()
+
+            //user.
+
+
 
             if(user.contrasena != txtPasswordConfirm.text.toString())
             {

@@ -1,22 +1,22 @@
 package com.alonsoms.appt1alonsoms.entities
 
 class clasemodelos {
-    class Usuario {
+    class usuario {
         lateinit var nombres: String
         lateinit var correo: String
         lateinit var username: String
         lateinit var contrasena: String
     }
 
-    class PerfilUsuario {
+    class perfilUsuario {
         lateinit var nombrePerfil: String
     }
 
-    class Editorial {
+    class editorial {
         lateinit var nombre: String
     }
 
-    class Genero {
+    class genero {
         lateinit var nombre: String
     }
 

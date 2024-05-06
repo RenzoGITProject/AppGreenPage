@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.alonsoms.appt1alonsoms.entities.Persona
-import com.alonsoms.appt1alonsoms.entities.clasemodelos.Usuario
+import com.alonsoms.appt1alonsoms.entities.clasemodelos.usuario
 import com.alonsoms.appt1alonsoms.model.PersonaModel
 import com.alonsoms.appt1alonsoms.model.UsuarioModel
 
@@ -48,13 +48,15 @@ class InicioSesionActivity : AppCompatActivity() {
 
             var existe = usuarioModel.existeUsuario(txtUsuario.text.toString(), txtPassword.text.toString());
 
-            if(existe){
+            if(existe)
+            {
                 val intent = Intent(this,MainActivity::class.java)
                 startActivity(intent)
             }
-            else{
+            else
+            {
                 val alertDialogBuilder = AlertDialog.Builder(this)
-                alertDialogBuilder.setTitle(title)
+                alertDialogBuilder.setTitle("Aplicación")
                 alertDialogBuilder.setMessage("Usuario no encontrado")
                 alertDialogBuilder.setPositiveButton("OK") { dialog, _ ->
                     // Aquí puedes añadir código para manejar el botón OK, si es necesario
