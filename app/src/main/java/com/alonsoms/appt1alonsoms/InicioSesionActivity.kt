@@ -1,9 +1,11 @@
 package com.alonsoms.appt1alonsoms
 
 import android.content.Intent
+import android.icu.text.AlphabeticIndex.Bucket.LabelType
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +19,7 @@ import com.alonsoms.appt1alonsoms.model.UsuarioModel
 class InicioSesionActivity : AppCompatActivity() {
 
     private lateinit var btnIniciarSesion: Button
-    private lateinit var btnRegistrarUsuario: Button
+    private lateinit var lblRegistrarUsuario: TextView
     private lateinit var txtUsuario: EditText
     private lateinit var txtPassword: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,13 +27,19 @@ class InicioSesionActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_loginpage)
         setReferencias()
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
     }
 
     fun setReferencias(){
 
         btnIniciarSesion = findViewById(R.id.btningresar)
-        btnRegistrarUsuario = findViewById(R.id.lblregistrar)
+        //btnRegistrarUsuario = findViewById(R.id.lblregistrar)
+        lblRegistrarUsuario = findViewById(R.id.lblregistrar)
         txtPassword = findViewById(R.id.txtclave)
         txtUsuario = findViewById(R.id.txtusuario)
 
@@ -57,7 +65,7 @@ class InicioSesionActivity : AppCompatActivity() {
             }
         }
 
-        btnRegistrarUsuario.setOnClickListener {
+        lblRegistrarUsuario.setOnClickListener {
             val intent = Intent(this,RegistroUsuarioActivity::class.java)
             startActivity(intent)
         }
