@@ -77,7 +77,7 @@ class UsuarioModel(context: Context) {
         var existeUsuario = false
         val db = sqLiteHelper.readableDatabase
 
-        val query = "SELECT COUNT(*) FROM Usuario WHERE Login = ? AND Password = ?"
+        val query = "SELECT COUNT(*) FROM Usuario WHERE username = ? AND contrasena = ?"
         val selectionArgs = arrayOf(username, contrasena)
 
         val cursor: Cursor = db.rawQuery(query, selectionArgs)

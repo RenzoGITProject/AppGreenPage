@@ -1,7 +1,6 @@
 package com.alonsoms.appt1alonsoms
 
 import android.content.Intent
-import android.icu.text.AlphabeticIndex.Bucket.LabelType
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -11,9 +10,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.alonsoms.appt1alonsoms.entities.Persona
-import com.alonsoms.appt1alonsoms.entities.clasemodelos.usuario
-import com.alonsoms.appt1alonsoms.model.PersonaModel
 import com.alonsoms.appt1alonsoms.model.UsuarioModel
 
 class InicioSesionActivity : AppCompatActivity() {
@@ -50,7 +46,7 @@ class InicioSesionActivity : AppCompatActivity() {
 
             if(existe)
             {
-                val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this,InicioActivity::class.java)
                 startActivity(intent)
             }
             else

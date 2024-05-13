@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">appT1AlonsoMS</string>
+    <string name="open_navigation_drawer">Open</string>
+    <string name="close_Navigation_drawer">Close</string>
 </resources>

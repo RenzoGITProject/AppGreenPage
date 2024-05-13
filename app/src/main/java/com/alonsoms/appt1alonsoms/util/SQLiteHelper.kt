@@ -16,10 +16,12 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context,DATABASE_NAME,nul
         override fun onCreate(db: SQLiteDatabase) {
             val sqlUsuario = "CREATE TABLE IF NOT EXISTS usuario " +
                     "(IdUsuario INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "Nombres VARCHAR(255) NOT NULL, " +
-                    "Login VARCHAR(255) NOT NULL, " +
-                    "Password VARCHAR(255) NOT NULL, " +
+                    "nombres VARCHAR(255) NOT NULL, " +
+                    "correo VARCHAR(255) NOT NULL, " +
+                    "username VARCHAR(255) NOT NULL, " +
+                    "contrasena VARCHAR(255) NOT NULL, " +
                     "FechaCreacion DATETIME DEFAULT CURRENT_TIMESTAMP);"
+
             db.execSQL(sqlUsuario)
 
             val sqlPerfilUsuario = "CREATE TABLE IF NOT EXISTS perfilUsuario " +

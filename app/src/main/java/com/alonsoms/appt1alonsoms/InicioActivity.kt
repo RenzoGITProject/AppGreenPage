@@ -7,8 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.alonsoms.appt1alonsoms.databinding.ActivityInicioBinding
+import com.alonsoms.appt1alonsoms.util.DrawerBaseActivity
+//import com.alonsoms.databinding.ActivityInicioBinding
 
-class MainActivity : AppCompatActivity() {
+class InicioActivity : DrawerBaseActivity() {
+
+    private lateinit var activityInicioBinding: ActivityInicioBinding
 
     private lateinit var btnPlanilla: Button
     private lateinit var btnPersona: Button
@@ -16,8 +21,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+       // enableEdgeToEdge()
+        activityInicioBinding = ActivityInicioBinding.inflate(layoutInflater)
+        setContentView(activityInicioBinding.root)
+       // setContentView(R.layout.activity_inicio)
 
         setReferencias()
 

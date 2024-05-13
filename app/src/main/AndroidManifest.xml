@@ -13,6 +13,10 @@
         android:theme="@style/Theme.AppT1AlonsoMS"
         tools:targetApi="31">
         <activity
+            android:name=".util.DrawerBaseActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".RegistroLibrosActivity"
             android:exported="false" />
         <activity
@@ -27,11 +31,6 @@
         <activity
             android:name=".InicioSesionActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
 
         </activity>
         <activity
@@ -43,12 +42,7 @@
         <activity
             android:name=".linearLayout_03"
             android:exported="false" />
-        <activity
-            android:name=".linearLayout_02"
-            android:exported="false" />
-        <activity
-            android:name=".linearLayout_01"
-            android:exported="false" />
+
         <activity
             android:name=".planillaDetails"
             android:exported="false" />
@@ -59,9 +53,13 @@
             android:name=".personalDetails"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".InicioActivity"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
     </application>
 

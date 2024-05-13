@@ -14,48 +14,49 @@ import com.alonsoms.appt1alonsoms.entities.clasemodelos.usuario
 import com.alonsoms.appt1alonsoms.model.UsuarioModel
 
 class RegistroUsuarioActivity : AppCompatActivity() {
-    private lateinit var btnRegistro: Button
-    private lateinit var btnregistrar:Button
+
+
     private lateinit var txtnombres: EditText
-    //private lateinit var txtCorreo: EditText
+    private lateinit var txtCorreo: EditText
     private lateinit var txtusername: EditText
     private lateinit var txtPassword: EditText
     private lateinit var txtPasswordConfirm: EditText
-   // private lateinit var txtPasswordConfirm: EditText
+    private lateinit var btnregistrar:Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_registro)
         setReferencias()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+       /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
+        }*/
 
     }
 
     fun setReferencias(){
 
-        btnregistrar = findViewById(R.id.btnregistrar)
+
         txtnombres = findViewById(R.id.txtnomapellidos)
-       // txtCorreo = findViewById(R.id.txtemail)
+        txtCorreo = findViewById(R.id.txtemail)
         txtusername = findViewById(R.id.txtusuarioregistro)
         txtPassword = findViewById(R.id.txtPassword)
        txtPasswordConfirm = findViewById(R.id.txtPasswordConfirm)
+        btnregistrar = findViewById(R.id.btnregistrar)
 
 
         btnregistrar.setOnClickListener {
             var usuarioModel = UsuarioModel(this)
             var user = usuario();
 
-            user.nombres = txtnombres.text.toString()
-           // user.correo = txtCorreo.text.toString()
+
+            user.correo = txtCorreo.text.toString()
             user.username = txtusername.text.toString()
             user.contrasena = txtPassword.text.toString()
-
-            //user.
+            user.nombres = txtnombres.text.toString()
 
 
 
@@ -75,7 +76,7 @@ class RegistroUsuarioActivity : AppCompatActivity() {
                 else
                 {
                     val alertDialogBuilder = AlertDialog.Builder(this)
-                    alertDialogBuilder.setTitle(title)
+                    alertDialogBuilder.setTitle("Aplicacion")
                     alertDialogBuilder.setMessage(mensaje)
                     alertDialogBuilder.setPositiveButton("OK") { dialog, _ ->
                         // Aquí puedes añadir código para manejar el botón OK, si es necesario

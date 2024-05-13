@@ -46,7 +46,7 @@ class planillaDetails : AppCompatActivity() {
         }
 
         btnRegresar.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,InicioActivity::class.java)
             startActivity(intent)
         }
     }
