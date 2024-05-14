@@ -9,12 +9,12 @@
     <item
         android:id="@+id/nav_configuracion"
         android:icon="@drawable/nav_setting"
-        android:title="Inicio"/>
+        android:title="Configuracion"/>
 
     <item
         android:id="@+id/navgaleria"
         android:icon="@drawable/nav_galeria"
-        android:title="Inicio"/>
+        android:title="Galeria"/>
 
 
 </group>

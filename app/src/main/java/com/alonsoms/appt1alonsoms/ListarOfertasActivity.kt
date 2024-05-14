@@ -6,10 +6,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.alonsoms.appt1alonsoms.databinding.ActivityInicioBinding
+import com.alonsoms.appt1alonsoms.databinding.ActivityListarOfertasBinding
 import com.alonsoms.appt1alonsoms.model.PersonaDAO
+import com.alonsoms.appt1alonsoms.util.DrawerBaseActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ListarOfertasActivity : AppCompatActivity() {
+class ListarOfertasActivity : DrawerBaseActivity() {
+    private lateinit var activityListarOfertasBinding: ActivityListarOfertasBinding
 
     private lateinit var btnAgregarMonto:FloatingActionButton
     private  lateinit var rvOfertas:RecyclerView
@@ -20,7 +24,8 @@ class ListarOfertasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_listar_ofertas)
+        activityListarOfertasBinding = ActivityListarOfertasBinding.inflate(layoutInflater)
+        setContentView(activityListarOfertasBinding.root)
 
         asignarReferencias()
         mostrarOfertas()
