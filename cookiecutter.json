@@ -1,0 +1,16 @@
+{
+  "project_name": "AppGreenPage",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "description": "A customizable Angular project.",
+  "author_name": "Lander Francisco Pacora Mendoza",
+  "email": "pacoramendoza37@gmail.com",
+  "github_username": "tu_usuario_github",
+  "version": "0.1.0",
+  "license": "MIT",
+  "angular_version": "16.0.0",
+  "use_scss": ["y", "n"],
+  "use_pwa": ["y", "n"],
+  "backend_url": "http://localhost:3000",
+  "default_language": ["en", "es", "fr"],
+  "include_example_components": ["y", "n"]
+}
